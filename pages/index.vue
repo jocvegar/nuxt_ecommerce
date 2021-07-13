@@ -38,6 +38,9 @@
 import commerce from "~/common/commerce";
 
 export default {
+  head: {
+    titleTemplate: "%s | Ella Uso Mi Cabeza"
+  },
   data() {
     return {
       loading: true,

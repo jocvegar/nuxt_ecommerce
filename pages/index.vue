@@ -14,10 +14,10 @@
           <div>
             <h1>{{ merchant.business_name }}</h1>
             <br />
-            <h3><n-link to="/categories">Categories</n-link></h3>
+            <h3><NuxtLink to="/categories">Categories NuxtLink</NuxtLink></h3>
             <category-list :categories="categories"></category-list>
             <hr />
-            <h3><n-link to="/products">Products</n-link></h3>
+            <h3><nuxt-link to="/products">Products nuxt-link </nuxt-link></h3>
             <product-list :products="products"></product-list>
           </div>
         </v-card-text>
@@ -47,12 +47,10 @@ export default {
   },
   mounted() {
     this.fetcheData();
-    console.log(`commerce`, commerce);
   },
   methods: {
     async fetcheData() {
       const merchant = await commerce.merchants.about();
-      console.log(`merchant`, merchant);
       const _categoias = await commerce.categories.list();
       this.categorias = _categoias.data;
       this.loading = false;
